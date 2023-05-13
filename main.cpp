@@ -74,7 +74,7 @@ int main() {
         const auto result_vector = exe_tm_generator();
 
         std::cout << "SIZE: " << result_vector.size() << std::endl;
-        std::cout << "Results (" << index << "): " << std::endl;
+        std::cout << "Results  for execution " << index << ": " << std::endl;
         for (const auto &timeStruct: result_vector) {
             std::cout << std::put_time(&timeStruct, "%c") << std::endl;
         }
