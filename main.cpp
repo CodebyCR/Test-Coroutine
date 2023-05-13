@@ -71,11 +71,11 @@ int main() {
 
     int index = 1;
     do  {
-        const auto first_result_vector = exe_tm_generator();
+        const auto result_vector = exe_tm_generator();
 
-        std::cout << "SIZE: " << first_result_vector.size() << std::endl;
+        std::cout << "SIZE: " << result_vector.size() << std::endl;
         std::cout << "Results (" << index << "): " << std::endl;
-        for (const auto &timeStruct: first_result_vector) {
+        for (const auto &timeStruct: result_vector) {
             std::cout << std::put_time(&timeStruct, "%c") << std::endl;
         }
 
