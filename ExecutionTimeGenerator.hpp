@@ -113,6 +113,7 @@ struct ExecutionTimeGenerator {
 
                                 if(resultTime.size() == 10) {
                                     co_yield resultTime;
+                                    resultTime.clear();
                                 }
 
                             }
