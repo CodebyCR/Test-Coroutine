@@ -29,15 +29,15 @@ struct ExecutionTimeGenerator {
 
         }
 
-        // ON co_yield
+        /// ON co_yield
         std::suspend_always yield_value(std::vector<std::tm> const& value) noexcept {
             current_result_times = value;
             return {};
         }
 
 
-        // ON co_return
-        std::vector<std::tm> return_value(std::vector<std::tm> value) noexcept {
+        /// ON co_return
+        std::vector<std::tm> return_value(std::vector<std::tm> const& value) noexcept {
             current_result_times = value;
             return {};
         }
@@ -71,7 +71,7 @@ struct ExecutionTimeGenerator {
         return *this;
     }
 
-    std::vector<std::tm> operator()() {
+    std::vector<std::tm> operator()() const {
         coro.resume();
         return coro.promise().current_result_times;
     }
